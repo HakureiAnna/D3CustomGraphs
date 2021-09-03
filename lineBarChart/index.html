@@ -1,0 +1,43 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Page</title>
+		<style type="text/css">
+			.axis {
+				font-size: 8px;
+				color: #3cf4f1
+			}	
+		</style>
+		<script src="../d3.v5.js"></script>	
+		<script src="../helper.js"></script>
+		<script src="lineBarChart.js"></script>
+	</head>
+	<body>  
+		<svg id="plot"></svg>
+		<script type="text/javascript">
+			var data = [
+				{
+					name: "瞬时总供水",
+					color: "#6be840",
+					data: [],
+				},
+				{
+					name: "时累计供水",
+					color: "#3cf4f1",
+					data: [],
+				},
+			];
+			
+			for (var i=0; i< data.length; ++i) {
+				for (var j=0; j<24; ++j) {
+					data[i].data.push({
+						x: (i>0?j:j+1),
+						y: parseInt(Math.random() * 25)/10,
+					});
+				}
+			}
+			var chart = lineBarChart();
+			chart.run("plot", data);
+		</script>
+	</body>
+</html>

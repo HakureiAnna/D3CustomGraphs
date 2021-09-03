@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Page</title>
+		<style type="text/css">
+			body {
+				background-color: black;				
+			}
+		</style>
+		<script src="../d3.v5.js"></script>	
+		<script src="../hazu.js"></script>
+		<script src="convexBarchart.js"></script>
+	</head>
+	<body>  
+		<svg id="plot">
+		</svg>
+		<script type="text/javascript">
+			var data = {
+				data: [
+					{
+						name: "车辆超速",
+						value: 546,
+					},
+					{
+						name: "漏油警报",
+						value: 765,
+					},
+					{
+						name: "油耗超高",
+						value: 245,
+					},
+					{
+						name: "手表异常",
+						value: 665,
+					},
+				],
+				getCustomId: function(id) {
+            		return "convexBarchart-" + id;
+        		},
+				params: {
+					axisColor: "#63a7f3",
+					axisFontFamily: "sans-serif",
+					axisFontSize: 18,
+					axisFontWeight: "normal",
+					axisTextLength: 80,
+					axisTextOffsetY: 20,
+					axisWidth: 2,
+					barColor: "rgba(99, 167, 243, 0.25)",
+					barColorSelected: "rgba(238,106,171, 0.25)",
+					barCPRX: 0.2,
+					barCPRY: 0.25,
+					barWidth: 50,
+					barWR: 1.4,
+					chartWidth: 1024,
+					chartHeight: 512,
+					labelColor: "#63a7f3",
+					labelFontFamily: "sans-serif",
+					labelFontSize: 32,
+					labelFontWeight: "normal",
+					labelRectColor: "rgba(99, 167, 243, 0.4)",
+					labelRectHeight: 40,
+					labelRectOffsetY: 5,
+					labelRectWidth: 80,
+					labelTextLength: 60,
+					labelTextOffsetY: 15,
+					paddingBottom: 40,
+					paddingLeft: 20,
+					paddingRight: 20,
+					paddingTop: 100,
+				},
+			};
+			var chart = convexBarchart();
+			chart.run("plot", data);
+		</script>
+	</body>
+</html>

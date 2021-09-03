@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Page</title>
+		<style type="text/css">
+			body {
+				background-color: black;				
+			}
+		</style>
+		<script src="../d3.v5.js"></script>	
+		<script src="../hazu.js"></script>
+		<script src="diamondDistribution.js"></script>
+	</head>
+	<body>  
+		<svg id="plot">
+		</svg>
+		<script type="text/javascript">
+			var data = {
+				params: {
+					dataColorFill: "rgba(208,72,115,0.25)",
+					dataColorStroke: "#d04873",
+					dataRadius: 6,
+					dataStrokeWidth: 2,
+					divisions: 5,
+            		domain: [0, 100],
+					fontFamily: "sans-serif",
+					fontSize: 24,
+					fontWeight: "bold",
+					gridColorFill: "rgba(173,215,254,0.25)",
+					gridColorStroke: "#add7fe",
+					gridStrokeWidth: 2,
+					lineColorStroke: "grey",
+					lineStrokeWidth: 1,
+					textColor: "#add7fe",
+					textLength: 100,
+					textOffsetX: 20,
+					textOffsetY: 20,
+				},
+				data: [
+					{
+						name: "人员出勤",
+						value: 91,
+					},
+					{
+						name: "作业质量",
+						value: 76,
+					},
+					{
+						name: "整体作业量",
+						value: 81,
+					},
+					{
+						name: "车辆出勤",
+						value: 98,
+					},
+				],
+			};
+			var chart = diamondDistribution();
+			chart.run("plot", data);
+		</script>
+	</body>
+</html>

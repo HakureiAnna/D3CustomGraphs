@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Page</title>
+		<style type="text/css">
+			.axis {
+				font-size: 8px;
+			}	
+		</style>
+		<script src="../d3.v5.js"></script>	
+		<script src="../helper.js"></script>
+		<script src="dashedBarchart.js"></script>
+	</head>
+	<body>  
+		<svg id="plot"></svg>
+		<script type="text/javascript">
+			var data = [
+				{
+					type: "line",
+					name: "行业要求",
+					color: "red",
+					data: [
+						{
+							x: "行业要求",
+							y: 95,
+						},
+					]
+				},
+				{
+					type: "barchart",
+					name: "企业内标准率",
+					color: "#2cd2f4",
+					colorA: "rgba(132, 234, 255, 0.3)",
+					data: [
+						{
+							x: "细菌总数",
+							y: 97,
+						},
+						{
+							x: "余氯",
+							y: 95,
+						},
+						{
+							x: "总大肠杆菌",
+							y: 98,
+						},
+						{
+							x: "浑浊度",
+							y: 99,
+						},
+						{
+							x: "思想综合",
+							y:96,
+						},
+					],
+				},
+			];
+			var chart = dashedBarchart();
+			chart.run("plot", data);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>D3 Page</title>
+		<style type="text/css">
+			body {
+				background-color: black;				
+			}
+		</style>
+		<script src="../d3.v5.js"></script>	
+		<script src="../hazu.js"></script>
+		<script src="duoBarchart.js"></script>
+	</head>
+	<body>  
+		<svg id="plot"></svg>
+		<script type="text/javascript">
+			var data = {
+				params: {
+					ID_POWER: 0,
+					ID_GAS: 1,
+					data: [["生产", "消耗"], ["用水", "用气"]],
+					types: ["电量", "煤气水"],
+					units: ["KWh", "moe"],
+					unitText: "单位：",
+				},
+				data: [
+					{
+						date: "2019/09/01",
+						data: [
+							{
+								production: 549445,
+								consumption: 549445,
+							},
+							{
+								production: 449445,
+								consumption: 449445,
+							},
+						],
+					},
+					{
+						date: "2019/09/02",
+						data: [
+							{
+								production: 465210,
+								consumption: 465210,
+							},
+							{
+								production: 565210,
+								consumption: 565210,
+							},
+						],
+					},
+					{
+						date: "2019/09/02",
+						data: [
+							{
+								production: 296849,
+								consumption: 296849,
+							},
+							{
+								production: 196849,
+								consumption: 196849,
+							},
+						],
+					},
+					{
+						date: "2019/09/04",
+						data: [
+							{
+								production: 320048,
+								consumption: 320048,
+							},
+							{
+								production: 420048,
+								consumption: 420048,
+							},
+						],
+					},
+					{
+						date: "2019/09/05",
+						data: [
+							{
+								production: 341021,
+								consumption: 341021,
+							},
+							{
+								production: 241021,
+								consumption: 241021,
+							},
+						],
+					},
+				]
+			}
+			var chart = duoBarchart();
+			chart.run("plot", data);
+		</script>
+	</body>
+</html>
